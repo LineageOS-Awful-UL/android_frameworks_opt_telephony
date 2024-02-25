@@ -725,17 +725,8 @@ public class AccessNetworksManager extends Handler {
      * @param apnType APN type
      * @return The preferred transport.
      */
-<<<<<<< HEAD
     @TransportType
     public int getPreferredTransport(@ApnType int apnType) {
-=======
-    public @TransportType int getPreferredTransport(@ApnType int apnType) {
-        // In legacy mode, always preferred on cellular.
-        if (isInLegacyMode()) {
-            return AccessNetworkConstants.TRANSPORT_TYPE_WWAN;
-        }
-
->>>>>>> 53ac344d4f (Revert "Removed IWLAN legacy mode support")
         return mPreferredTransports.get(apnType) == null
                 ? AccessNetworkConstants.TRANSPORT_TYPE_WWAN : mPreferredTransports.get(apnType);
     }

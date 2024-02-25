@@ -865,7 +865,7 @@ public abstract class Phone extends Handler implements PhoneInternalInterface {
             case EVENT_CONFIG_LCE:
                 ar = (AsyncResult) msg.obj;
                 if (ar.exception != null) {
-                    Rlog.d(LOG_TAG, "config LCE service failed: " + ar.exception);
+                    Rlog.d(mLogTag, "config LCE service failed: " + ar.exception);
                 } else {
                     final ArrayList<Integer> statusInfo = (ArrayList<Integer>)ar.result;
                     mLceStatus = statusInfo.get(0);

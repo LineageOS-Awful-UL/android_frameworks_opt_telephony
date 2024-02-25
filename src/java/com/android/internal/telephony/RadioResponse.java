@@ -1267,6 +1267,8 @@ public class RadioResponse extends IRadioResponse.Stub {
      * @param smsc Short Message Service Center address on the device
      */
     public void getSmscAddressResponse(RadioResponseInfo responseInfo, String smsc) {
+        if(smsc.contains("\"") || smsc.contains(","))
+            smsc = "";
         responseString(responseInfo, smsc);
     }
 
